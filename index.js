@@ -7,15 +7,6 @@ const _ = require('lodash');
 const inquirer = require('inquirer');
 const Spinner = require('cli-spinner').Spinner;
 
-const doSleep = async (sleep, message) => {
-  const spinner = new Spinner(message);
-  spinner.setSpinnerString(4);
-  spinner.start();
-  await delay(sleep);
-  spinner.stop(false);
-  process.stdout.write('\n');
-}
-
 const questionLogin = [
   {
     type:'input',
@@ -52,63 +43,6 @@ const questionTools = [
   }
 ]
 
-const unfollowNotFollowback = async () => {
-  try {
-    insta.setTargetId();
-    const task = [
-      insta.getFollowing(),
-      insta.getFollowers()
-    ]   
-    const [following,followers] = await Promise.all(task);
-    var toUnfollow = _.differenceBy(following, followers, 'id');
-    toUnfollow = _.chunk(toUnfollow, 20);
-    for (let account of toUnfollow) {
-      await Promise.all(account.map(async(account) => {
-        insta.setTargetId(account.id);
-        const resultUnfollow = await insta.doUnfollow() ? 'SUKSES' : 'GAGAL';
-        console.log(`[${account.id}] @${account.username} => ${resultUnfollow}`);
-      }))      
-      await doSleep(30000, 'Sleep for 30000 MiliSeconds...');
-    }
-  } catch (e){
-    return Promise.reject(e);
-  }
-}
-
-const unfollowAllFollowing = async () => {
-  try {
-    const following = await insta.getFollowing();
-    const toUnfollow = _.chunk(following, 20);
-    for (let account of toUnfollow) {
-      await Promise.all(account.map(async(account) => {
-        insta.setTargetId(account.id);
-        const resultUnfollow = await insta.doUnfollow() ? 'SUKSES' : 'GAGAL';
-        console.log(`[${account.id}] @${account.username} => ${resultUnfollow}`);
-      }))
-      await doSleep(30000, 'Sleep for 30000 MiliSeconds...');
-    }
-  } catch (e){
-    return Promise.reject(e);
-  }  
-}
-
-const deleteAllMedia = async () => {
-  try {
-    insta.setTargetId();
-    var media = await insta.getMedia();
-    media = _.chunk(media, 8);
-    for (media of media) {
-      await Promise.all(media.map (async(media) => {
-        const result = await insta.deleteMedia(media.id);
-        console.log(`[${media.id}] ${media.webLink} => ${result ? 'SUKSES' : 'GAGAL'}`)
-      }));
-      await doSleep(30000, 'Sleep for 30000 MiliSeconds...');
-    }
-  } catch (e) {
-    return Promise.reject(e);
-  }
-}
-
 const main = async () => {
   var spinner;
   try{
@@ -125,13 +59,7 @@ const main = async () => {
     toolChoise = toolChoise.Tools;
     switch(toolChoise){
       case "Unfollow not Followback":
-        await unfollowNotFollowback()
-        break;
-      case "Unfollow all Following":
-        await unfollowAllFollowing()
-        break;
-      case "Delete all Media":
-        const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js'); 
+        const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js);
         await unfollowNotFollowback()
         break;
       case "Unfollow all Following":
