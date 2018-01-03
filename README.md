@@ -7,6 +7,11 @@ How to install
 2. npm install
 3. node index.js
 
-[![asciicast](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi.png)](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi)
+List Tools :
+1. Unfollow not Followback
+2. Unfollow all Following
+3. Delete all media
 
-Thank https://github.com/huttarichard/instagram-private-api/ FOR node module
+Thank https://github.com/huttarichard/instagram-private-api/ for node module
+
+[![asciicast](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi.png)](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi)
