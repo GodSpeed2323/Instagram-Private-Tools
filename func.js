@@ -79,4 +79,23 @@ insta.doLike = async () => {
   }
 }
 
+insta.getMedia = async () => {
+  const feeds = new Client.Feed.UserMedia(this.session, this.tagetId);
+  try {
+    feeds.map = item => item.params;
+    return Promise.resolve(feeds.all());
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
+
+insta.deleteMedia = async (mediaId) => {
+  try {
+    await Client.Media.delete(this.session, mediaId);
+    return true;
+  } catch(err) {
+    return false;
+  }
+}
+
 module.exports = insta;
