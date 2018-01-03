@@ -7,6 +7,7 @@ const _ = require('lodash');
 const inquirer = require('inquirer');
 const Spinner = require('cli-spinner').Spinner;
 
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
 const doSleep = async (sleep, message) => {
   const spinner = new Spinner(message);
   spinner.setSpinnerString(4);
@@ -16,6 +17,8 @@ const doSleep = async (sleep, message) => {
   process.stdout.write('\n');
 }
 
+=======
+>>>>>>> add Tools Folder
 const questionLogin = [
   {
     type:'input',
@@ -52,6 +55,7 @@ const questionTools = [
   }
 ]
 
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
 const unfollowNotFollowback = async () => {
   try {
     insta.setTargetId();
@@ -109,6 +113,8 @@ const deleteAllMedia = async () => {
   }
 }
 
+=======
+>>>>>>> add Tools Folder
 const main = async () => {
   var spinner;
   try{
@@ -125,12 +131,24 @@ const main = async () => {
     toolChoise = toolChoise.Tools;
     switch(toolChoise){
       case "Unfollow not Followback":
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
         await unfollowNotFollowback()
         break;
       case "Unfollow all Following":
         await unfollowAllFollowing()
         break;
       case "Delete all Media":
+=======
+        const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js'); 
+        await unfollowNotFollowback()
+        break;
+      case "Unfollow all Following":
+        const unfollowAllFollowing = require('./Tools/unfollowallfollowing.js');
+        await unfollowAllFollowing()
+        break;
+      case "Delete all Media":
+        const deleteAllMedia = require('./Tools/deleteallMedia.js');
+>>>>>>> add Tools Folder
         await deleteAllMedia()
         break;
       default:
@@ -179,4 +197,8 @@ console.log(chalk`
     ------------------------------------------------------
 `)
 
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
 main()
+=======
+main()
+>>>>>>> add Tools Folder

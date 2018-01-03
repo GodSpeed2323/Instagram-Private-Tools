@@ -1,6 +1,12 @@
 'use strict'
 
 const Client = require('instagram-private-api').V1;
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
+=======
+const delay = require('delay');
+const _ = require('lodash');
+const Spinner = require('cli-spinner').Spinner;
+>>>>>>> add Tools Folder
 
 const insta = async (username,password) => {
   const Device = new Client.Device(username);
@@ -98,4 +104,17 @@ insta.deleteMedia = async (mediaId) => {
   }
 }
 
+<<<<<<< 91dbe3101b2ae5c86a6b58edfe357abbd42ee7fa
 module.exports = insta;
+=======
+insta.doSleep = async (sleep, message) => {
+  const spinner = new Spinner(message);
+  spinner.setSpinnerString(4);
+  spinner.start();
+  await delay(sleep);
+  spinner.stop(false);
+  process.stdout.write('\n');
+}
+
+module.exports = insta;
+>>>>>>> add Tools Folder
