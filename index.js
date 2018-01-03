@@ -59,7 +59,7 @@ const main = async () => {
     toolChoise = toolChoise.Tools;
     switch(toolChoise){
       case "Unfollow not Followback":
-        const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js);
+        const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js');
         await unfollowNotFollowback()
         break;
       case "Unfollow all Following":
