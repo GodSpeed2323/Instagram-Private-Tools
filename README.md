@@ -6,6 +6,6 @@ How to install
 *npm install
 *node index.js
 
-[![asciicast](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi)](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi)
+[![asciicast](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi.png)](https://asciinema.org/a/MSN7xgLjdoYzF5npleL02tbDi)
 
 Thank https://github.com/huttarichard/instagram-private-api/ FOR node module
