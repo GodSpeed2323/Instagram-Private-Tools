@@ -37,9 +37,11 @@ const questionTools = [
       [
         "Unfollow not Followback",
         "Unfollow all Following",
+        "Bom like Media Target",
         "Delete all Media",
+        new inquirer.Separator(),
         "Follow Followers Target",
-        "Bom like Media Target"
+        "Follow Account By Hastag"
       ] 
   }
 ]
@@ -58,15 +60,14 @@ const main = async () => {
     console.log(`Total Followers\t\t: ${doLogin.account.followerCount}\nTotal Following\t\t: ${doLogin.account.followingCount}\nTotal Media\t\t: ${doLogin.account.mediaCount}\n`);
     var toolChoise = await inquirer.prompt(questionTools);
     toolChoise = toolChoise.Tools;
-    console.log('');
     switch(toolChoise){
       case "Unfollow not Followback":
         const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js');
-        await unfollowNotFollowback()
+        await unfollowNotFollowback();
         break;
       case "Unfollow all Following":
         const unfollowAllFollowing = require('./Tools/unfollowallfollowing.js');
-        await unfollowAllFollowing()
+        await unfollowAllFollowing();
         break;
       case "Delete all Media":
         const deleteAllMedia = require('./Tools/deleteallMedia.js');
@@ -79,6 +80,10 @@ const main = async () => {
       case "Bom like Media Target":
         const bomLikeTarget = require('./Tools/bomliketarget.js');
         await bomLikeTarget(doLogin.session);      
+        break;
+      case "Follow Account By Hastag":
+        const followAccountByHastag = require('./Tools/followaccountbyhastag.js');
+        await followAccountByHastag(doLogin.session);
         break;
       default:
         console.log('Exit..');
