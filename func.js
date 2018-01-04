@@ -64,18 +64,18 @@ insta.doUnfollow = async () => {
   }
 }
 
-insta.doComment = async (text) => {
+insta.doComment = async (mediaId, text) => {
   try {
-    await Client.Comment.create(this.session, this.tagetId, text);
+    await Client.Comment.create(this.session, mediaId, text);
     return true;
   } catch(e){
     return false;
   }
 }
 
-insta.doLike = async () => {
+insta.doLike = async (mediaId) => {
   try{
-    await Client.Like.create(this.session, this.tagetId);
+    await Client.Like.create(this.session, mediaId);
     return true;
   } catch(e) {
     return false;
