@@ -3,7 +3,6 @@
 const insta = require('./func.js');
 const chalk = require('chalk');
 const delay = require('delay');
-const _ = require('lodash');
 const inquirer = require('inquirer');
 const Spinner = require('cli-spinner').Spinner;
 
@@ -38,7 +37,8 @@ const questionTools = [
       [
         "Unfollow not Followback",
         "Unfollow all Following",
-        "Delete all Media"
+        "Delete all Media",
+        "Follow Followers Target"
       ] 
   }
 ]
@@ -59,19 +59,24 @@ const main = async () => {
     toolChoise = toolChoise.Tools;
     switch(toolChoise){
       case "Unfollow not Followback":
+        console.log(`\n`)
         const unfollowNotFollowback = require('./Tools/unfollownotfollowback.js');
         await unfollowNotFollowback()
         break;
       case "Unfollow all Following":
         const unfollowAllFollowing = require('./Tools/unfollowallfollowing.js');
+        console.log(`\n`)
         await unfollowAllFollowing()
         break;
       case "Delete all Media":
+        console.log(`\n`)
         const deleteAllMedia = require('./Tools/deleteallMedia.js');
-        await deleteAllMedia()
+        await deleteAllMedia();
         break;
+      case "Follow Followers Target":
+        const followFollowersTarget = require('./Tools/followfollowerstarget.js');
+        await followFollowersTarget(doLogin.session);
       default:
-        exit();
         console.log(3)
     }
   } catch(e) {
@@ -110,7 +115,7 @@ console.log(chalk`
                 ##############   #############
     ------------------------------------------------------
       Instagram Priv8 Tools
-      Code Ccocot
+      Code by Ccocot
       CCOCOT.CO | BC0DE.NET | NAONLAH.NET | WingkoColi
       ccocot@bc0de.net and Thank's To SGB TEAM
     ------------------------------------------------------
