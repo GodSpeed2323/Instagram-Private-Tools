@@ -3,6 +3,7 @@ const _ = require('lodash');
 const chalk = require('chalk');
 
 const deleteAllMedia = async () => {
+  console.log('')
   try {
     insta.setTargetId();
     var media = await insta.getMedia();
