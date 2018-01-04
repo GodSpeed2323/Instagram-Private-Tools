@@ -1,5 +1,6 @@
 const insta = require('../func.js');
 const _ = require('lodash');
+const chalk = require('chalk');
 
 const unfollowAllFollowing = async () => {
   try {
@@ -8,8 +9,8 @@ const unfollowAllFollowing = async () => {
     for (let account of toUnfollow) {
       await Promise.all(account.map(async(account) => {
         insta.setTargetId(account.id);
-        const resultUnfollow = await insta.doUnfollow() ? 'SUKSES' : 'GAGAL';
-        console.log(`[${account.id}] @${account.username} => ${resultUnfollow}`);
+        const resultUnfollow = await insta.doUnfollow() ? chalk`{bold.green SUKSES}` : chalk`{bold.green GAGAL}`;
+        console.log(chalk`[{magenta ${account.id}}] {cyanBright @${account.username}} => ${resultUnfollow}`);
       }))
       await doSleep(30000, 'Sleep for 30000 MiliSeconds...');
     }
