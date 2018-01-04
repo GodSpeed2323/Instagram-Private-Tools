@@ -1,5 +1,6 @@
 const insta = require('../func.js');
 const _ = require('lodash');
+const chalk = require('chalk');
 
 const deleteAllMedia = async () => {
   try {
@@ -9,7 +10,7 @@ const deleteAllMedia = async () => {
     for (media of media) {
       await Promise.all(media.map (async(media) => {
         const result = await insta.deleteMedia(media.id);
-        console.log(`[${media.id}] ${media.webLink} => ${result ? 'SUKSES' : 'GAGAL'}`)
+        console.log(`[{magenta ${media.id}}] {cyanBright ${media.webLink}} => ${result ? chalk`{bold.green SUKSES}` : `{bold.red GAGAL}`}`)
       }));
       await doSleep(30000, 'Sleep for 30000 MiliSeconds...');
     }
