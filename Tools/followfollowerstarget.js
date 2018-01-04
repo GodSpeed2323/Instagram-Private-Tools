@@ -57,7 +57,7 @@ const followFollowersTarget = async (session) => {
     var targetId = await rp(requestOption);
     targetId = targetId.user.id;
     const feeds = new Client.Feed.AccountFollowers(session, targetId);
-    console.log('\n')
+    console.log('')
     do {
       if (cursor) feeds.setCursor(cursor);
       var targetPerson = await feeds.get();
