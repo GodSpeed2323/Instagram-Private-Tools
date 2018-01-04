@@ -12,6 +12,7 @@ List Tools :
 2. Unfollow all Following
 3. Delete all media
 4. Follow Followers Target
+5. Bom Like Media Target
 
 Thank https://github.com/huttarichard/instagram-private-api/ for node module
 
