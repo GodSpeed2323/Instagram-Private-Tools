@@ -13,6 +13,7 @@ List Tools :
 3. Delete all media
 4. Follow Followers Target
 5. Bom Like Media Target
+6. Follow Account By Hastag
 
 Thank https://github.com/huttarichard/instagram-private-api/ for node module
 
