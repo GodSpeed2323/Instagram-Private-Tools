@@ -123,9 +123,8 @@ console.log(chalk`
                 ##############   #############            
                 ##############   #############
     ------------------------------------------------------
-      Instagram Priv8 Tools
-      Code by Ccocot
-      CCOCOT.CO | BC0DE.NET | NAONLAH.NET | WingkoColi
+      Instagram Priv8 Tools | Code by Ccocot
+      Zerobyte.ID | BC0DE.NET | NAONLAH.NET | WingkoColi
       ccocot@bc0de.net and Thank's To SGB TEAM
     ------------------------------------------------------
 `)
