@@ -9,6 +9,8 @@
     "delay": "^2.0.0",
     "inquirer": "^4.0.1",
     "instagram-private-api": "^0.6.7",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
