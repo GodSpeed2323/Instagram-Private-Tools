@@ -3,6 +3,7 @@ const _ = require('lodash');
 const chalk = require('chalk');
 
 const unfollowAllFollowing = async () => {
+  console.log('')
   try {
     insta.setTargetId();
     const following = await insta.getFollowing();
