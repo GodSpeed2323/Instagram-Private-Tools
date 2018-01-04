@@ -36,6 +36,7 @@ const bomLikeTarget = async (session) => {
     var targetId = await rp(requestOption);
     targetId = targetId.user.id;
     const feeds = new Client.Feed.UserMedia(session, targetId);
+    console.log('')
     var cursor;
     do {
       if (cursor) feeds.setCursor(cursor);
