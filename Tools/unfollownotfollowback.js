@@ -3,6 +3,7 @@ const _ = require('lodash');
 const chalk = require('chalk');
 
 const unfollowNotFollowback = async () => {
+  console.log('')
   try {
     insta.setTargetId();
     const task = [
