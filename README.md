@@ -17,4 +17,4 @@ List Tools :
 
 Thank https://github.com/huttarichard/instagram-private-api/ for node module
 
-[![asciicast](https://asciinema.org/a/1W1xtrClrGIWpzVQzHngmGxBZ.png)](https://asciinema.org/a/1W1xtrClrGIWpzVQzHngmGxBZ)
+[![asciicast](https://asciinema.org/a/lA0ISUKy9VIC4XjUqEQOK22rd.png)](https://asciinema.org/a/lA0ISUKy9VIC4XjUqEQOK22rd)
